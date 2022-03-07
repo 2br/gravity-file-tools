@@ -3,7 +3,7 @@
 /**
 * @fileoverview RSW - Loader for Gravity .rsw file
 * @author 2br
-* @version 1.0
+* @version 1.0.1
 */
 class Rsw
 {
@@ -86,7 +86,7 @@ class Rsw
 		if( $this->version >= 1.3 ) {
 			$this->water = new RSWWater($this->fp, $this->version);
 		}
-		echo $ini." type : ".$this->water->type."<br>";
+		
 		// Read light
 		if( $this->version >= 1.5 ) {
 			$this->light =  new RSWLight($this->fp, $this->version);
@@ -237,7 +237,7 @@ class ObjectLight
 	/**
 	 * Light Object structure
 	 *
-	 * @param {BinaryReader} fp
+	 * @param {resource $handle} fp
 	 */
 	public function __construct( $fp ) {
 				
@@ -273,7 +273,7 @@ class ObjectModel
 	/**
 	 * Model structure
 	 *
-	 * @param {BinaryReader} fp
+	 * @param {resource $handle} fp
 	 * @param {int} version
 	 */
 	public function __construct( $fp , $version ) {
@@ -314,7 +314,7 @@ class RSWWater
 	/**
 	 * Water structure
 	 *
-	 * @param {BinaryReader} fp
+	 * @param {resource $handle} fp
 	 * @param {int} version
 	 */
 	public function __construct( $fp , $version ) {
@@ -346,7 +346,7 @@ class RSWLight
 	/**
 	 * Global Light structure
 	 *
-	 * @param {BinaryReader} fp
+	 * @param {resource $handle} fp
 	 * @param {int} version
 	 */
 	public function __construct( $fp , $version ) {

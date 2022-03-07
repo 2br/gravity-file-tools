@@ -123,7 +123,7 @@ class GNDTile
 	/**
 	 * Tile structure
 	 *
-	 * @param {BinaryReader} fp
+	 * @param {resource $handle} fp
 	 */
 	public function __construct( $fp ) {
 		//TODO: read tiles
@@ -140,7 +140,7 @@ class GNDFace
 	/**
 	 * Face structure
 	 *
-	 * @param {BinaryReader} fp
+	 * @param {resource $handle} fp
 	 */
 	public function __construct( $fp ) {
 		//TODO: read faces
