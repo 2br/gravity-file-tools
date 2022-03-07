@@ -41,12 +41,10 @@ class Gnd
 
 			if ( ! is_readable($filename) )
 				throw new Exception("GND::open() - Can't read file '{$filename}'.");
-
-			$this->size = filesize($filename);
-		}
+		} 
 	
 		$content = file_get_contents($filename);
-
+		$this->size = strlen($content);
 		$this->fp = tmpfile();
 		fwrite($this->fp,$content);
 		rewind ($this->fp);
